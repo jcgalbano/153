@@ -22,6 +22,10 @@ class User extends MY_Controller
 		// sets the page title to be Login
 		$this->data['page_title'] = 'Login';
 
+    // if user is already logged in redirect to the dashboard
+    if ($this->ion_auth->logged_in()){
+      redirect('admin/dashboard', 'refresh');
+    }
 		// conditional to verify the inputs
 		if($this->input->post())
 		{
@@ -34,7 +38,7 @@ class User extends MY_Controller
 				$remember = (bool) $this->input->post('remember');
 				if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember))
 				{
-				        redirect('admin', 'refresh');
+				        redirect('admin/dashboard', 'refresh');
 				}
 				else
 				{
