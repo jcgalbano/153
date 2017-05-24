@@ -1,0 +1,4 @@
+Remove unnessary data, tables, users, etc (MySQL, GitHub, LiNode users)
+Silence all errors in php files
+Make sure that the database config is properly setup (password, etc.)
+Test deployed version on server
