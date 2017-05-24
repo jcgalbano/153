@@ -10,7 +10,8 @@ class Dashboard extends Admin_Controller
 
 	  // simply renders the dashboard_view under the admin folder in the views
 	  public function index()
-	  {
+    {
+        $this->data['user'] = $this->ion_auth->user()->row();
 	      $this->render('admin/dashboard_view');
 	  }
 }

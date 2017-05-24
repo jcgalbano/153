@@ -78,10 +78,10 @@ class Users extends Admin_Controller
   		$this->form_validation->set_rules('birthday','Birthday','trim');
   		$this->form_validation->set_rules('username','Username','trim|required');
   		$this->form_validation->set_rules('email','Email','trim|required|valid_email');
-		$this->form_validation->set_rules('password','Password','min_length[6]');
-		$this->form_validation->set_rules('password_confirm','Password confirmation','matches[password]');
-		$this->form_validation->set_rules('groups[]','Groups','required|integer');
-		$this->form_validation->set_rules('user_id','User ID','trim|integer|required');
+		  $this->form_validation->set_rules('password','Password','min_length[6]');
+		  $this->form_validation->set_rules('password_confirm','Password confirmation','matches[password]');
+		  $this->form_validation->set_rules('groups[]','Groups','required|integer');
+		  $this->form_validation->set_rules('user_id','User ID','trim|integer|required');
 
   		if($this->form_validation->run() === FALSE)
   		{

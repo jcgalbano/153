@@ -16,7 +16,7 @@
 		<?php
 		if($this->ion_auth->logged_in()) {
 		?>
-			<nav class="navbar navbar-inverse navbar-fixed-top">
+			<nav class="navbar navbar-inverse navbar-fixed-top " style="background-color: #e51c23;">
   				<div class="container">
     					<div class="navbar-header">
       						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -25,13 +25,20 @@
         						<span class="icon-bar"></span>
         						<span class="icon-bar"></span>
       						</button>
-      						<a class="navbar-brand" href="<?php echo site_url('admin');?>">CS153 Admin Site</a>	
+      						<a class="navbar-brand" href="<?php echo site_url('admin');?>" style="color:black;font-family: Century Gothic;">CS153 Project</a>	
 					</div>
     			
 					<div id="navbar" class="collapse navbar-collapse">
-      						<ul class="nav navbar-nav">
-        						<li><a href="#">Link 1</a></li>
-        						<li><a href="#">Link 2</a></li>
+                  <ul class="nav navbar-nav">
+                
+                  <?php
+								  if(!$this->ion_auth->is_admin())
+								  {
+								  ?>
+									  <li><a href="<?php echo site_url('admin/user/edit/'.$user->id); ?>">Edit My Information</a></li>
+								  <?php
+								  }
+								  ?>
 						</ul>
 
 
