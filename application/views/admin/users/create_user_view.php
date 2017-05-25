@@ -1,3 +1,4 @@
+<?php error_reporting(E_ERROR);?>
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <div class="container" style="margin-top: 60px;">
   <div class="row">
