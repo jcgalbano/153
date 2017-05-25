@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR);
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 // inherits from MY_Controller from the core folder

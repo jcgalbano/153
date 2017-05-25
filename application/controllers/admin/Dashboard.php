@@ -1,4 +1,6 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+error_reporting(E_ERROR);
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Dashboard extends Admin_Controller
 {

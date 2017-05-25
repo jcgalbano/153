@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR);
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Users extends Admin_Controller
