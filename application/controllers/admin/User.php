@@ -36,8 +36,23 @@ class User extends MY_Controller
 			{
 				$remember = (bool) $this->input->post('remember');
 				if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password') ))
-				{
-				  redirect('admin/dashboard', 'refresh');
+        {
+          $this->load->model('Session_model');
+          $id = $this->ion_auth->user()->row()->id;
+          $username = $this->ion_auth->user()->row()->username;
+          $ip_address = $this->ion_auth->user()->row()->ip_address;
+
+          $data = array(
+            'id' => $id,
+            'username' => $username,
+            'ip_address' => $ip_address,
+          
+          );
+
+          $id = $this->Session_model->insert($data);
+
+          
+          redirect('admin/dashboard', 'refresh');
 				}
 				else
 				{
@@ -119,7 +134,10 @@ class User extends MY_Controller
 
 	// logout function
 	public function logout()
-	{
+  {
+    $this->load->model('Session_model');
+    $id = $this->ion_auth->user()->row()->id;
+    $this->Session_model->row_delete($id);
 		$this->ion_auth->logout();
 		redirect('admin/user/login', 'refresh');
   }

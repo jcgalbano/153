@@ -11,5 +11,13 @@
     echo "Birthday: ";
     echo $user->birthday."<br><br>";
 
-  ?>
+    echo "Logged-In Users:<br>";
+    foreach($objects as $object) {
+          echo $object->username."<br>";
+    }
+
+
+
+
+?>
 </div>
