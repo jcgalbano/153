@@ -1,6 +1,3 @@
-# CS 153 Project
-Admin panel project for CS 153 course under isr Phillip Zuniga
-
 # Installation:
 
 1. Install XAMPP/WAMPP.
